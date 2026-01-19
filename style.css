@@ -17,7 +17,7 @@
     url("../assets/fonts/Helvetica/Helvetica-Bold.ttf") format("truetype"),
     url("../assets/fonts/Helvetica/Helvetica-Bold.eot")
       format("embedded-opentype");
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -25,11 +25,11 @@
 
 :root {
   /* Шрифты */
-  --font-base: "Helvetica-Regular", sans-serif;
-  --font-heading: "Helvetica-Bold", sans-serif;
+  --font-base: "Helvetica", sans-serif;
 
   /* Веса шрифтов */
   --font-weight-regular: 400;
+  --font-weight-bold: 700;
 
   /* Цвета */
   --color-bg: rgba(242, 242, 242, 1);
@@ -58,6 +58,7 @@ body {
   margin: 0;
   font-family: var(--font-base);
   color: var(--color-txt);
+  font-size: 20px;
   /* font-size: clamp(16px, 1.042vw, 20px); */
   font-weight: 400;
   background-color: var(--color-bg);
@@ -79,6 +80,10 @@ main {
   flex: 1 0 auto;
 }
 
+section {
+  margin-bottom: 100px;
+}
+
 .container {
   margin: auto;
   max-width: 1440px;
@@ -98,11 +103,18 @@ h1,
 .h2,
 .h1 {
   margin: 0;
-  font-family: var(--font-heading);
+  font-family: var(--font-base);
+  font-weight: var(--font-weight-bold);
   display: inline-block;
-  font-weight: var(--font-weight-regular);
+  line-height: 120%;
 }
 
+
+h1 {
+  font-size: 52px;
+  margin-top: 172px;
+  margin-bottom: 40px;
+}
 
 p {
   margin: 0;
@@ -139,6 +151,8 @@ button {
 .header__wrapper-left {
     display: flex;
     gap: 40px;
+    font-size: 16px;
+    line-height: 120%;
 }
 
 .header__nav-list {
@@ -146,6 +160,8 @@ button {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    font-size: 16px;
+    line-height: 18px;
 }
 
 .btn {
@@ -162,25 +178,42 @@ button {
     box-shadow 0.3s ease;
   background-repeat: no-repeat;
   font-family: var(--font-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
   background-color: var(--color-blue);
   color: var(--color-white);
 }
 
+
 .btn-arrow {
     display: flex;
     align-items: center;
-    padding: 10px 15px 10px 29px;
     gap: 20px;
 }
 
-.header-arrow {
-    width: 30px;
-    aspect-ratio: 1/1;
+.btn-header {
+    padding: 10px 15px 10px 29px;
+}
 
+.btn-hero {
+  padding: 10px 8px 10px 30px;
+  font-size: 24px;
+}
+
+.button-arrow {
+    aspect-ratio: 1/1;
     background: var(--color-bg);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.header-arrow {
+  width: 30px;
+}
+
+.hero-arrow {
+  width: 59px;
 }
 
 
@@ -188,7 +221,7 @@ button {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 5px; /* ← ровно 5px */
+  gap: 5px;
   cursor: pointer;
 }
 
@@ -206,4 +239,57 @@ button {
   inset: 0;
   opacity: 0;
   cursor: pointer;
+}
+
+/* Секция Hero */
+.hero {
+  height: 684px;
+  overflow: hidden;
+}
+
+.hero__wrapper {
+  display: flex;
+}
+
+.hero-content__wrapper {
+  width: 50%;
+}
+
+.hero-city {
+  color: var(--color-blue);
+}
+
+.hero-subtitle {
+  margin-bottom: 50px;
+}
+
+.hero-image {
+  width: 50%;
+}
+
+.hero-image img {
+  width: 100%;
+}
+
+/* Секция Numbers */
+.numbers-content {
+  border-top: 1px solid rgba(47, 47, 47, 0.6);
+  padding-top: 30px;
+  padding-bottom: 77px;
+  display: flex;
+  align-items: start;
+}
+
+.number {
+  width: 50%;
+  color: var(--color-blue);
+  font-size: 52px;
+  line-height: 100%;
+  font-weight: var(--font-weight-bold);
+}
+
+.number-text {
+  width: 50%;
+  font-size: 24px;
+  line-height: 120%;
 }
