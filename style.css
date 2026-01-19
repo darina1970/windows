@@ -1,11 +1,40 @@
 @font-face {
-  font-family: "Dihjauti";
-  src: url("../assets/fonts/Dihjauti/Dihjauti-Regular.woff2") format("woff2"),
-    url("../assets/fonts/Dihjauti/Dihjauti-Regular.woff") format("woff"),
-    url("../assets/fonts/Dihjauti/Dihjauti-Regular.ttf") format("truetype"),
-    url("../assets/fonts/Dihjauti/Dihjauti-Regular.eot")
+  font-family: "Helvetica";
+  src: url("../assets/fonts/Helvetica/Helvetica-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Helvetica/Helvetica-Regular.woff") format("woff"),
+    url("../assets/fonts/Helvetica/Helvetica-Regular.ttf") format("truetype"),
+    url("../assets/fonts/Helvetica/Helvetica-Regular.eot")
       format("embedded-opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../assets/fonts/Helvetica/Helvetica-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Helvetica/Helvetica-Bold.woff") format("woff"),
+    url("../assets/fonts/Helvetica/Helvetica-Bold.ttf") format("truetype"),
+    url("../assets/fonts/Helvetica/Helvetica-Bold.eot")
+      format("embedded-opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  /* Шрифты */
+  --font-base: "Helvetica-Regular", sans-serif;
+  --font-heading: "Helvetica-Bold", sans-serif;
+
+  /* Веса шрифтов */
+  --font-weight-regular: 400;
+
+  /* Цвета */
+  --color-bg: rgba(242, 242, 242, 1);
+  --color-white: rgba(255, 255, 255, 1);
+  --color-txt: rgba(47, 47, 47, 1);
+  --color-blue-light: rgba(227, 234, 248, 1);
+  --color-blue: rgba(62, 111, 208, 1);
 }
