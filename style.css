@@ -408,6 +408,7 @@ button {
   color: var(--color-white);
   font-size: 32px;
   font-weight: var(--font-weight-bold);
+  cursor: pointer;
 }
 
 .catalogue-item__title {
@@ -415,6 +416,7 @@ button {
   align-items: center;
   justify-content: space-between;
   padding-right: 26px;
+  cursor: pointer;
 }
 
 .catalogue-item__title p {
@@ -517,3 +519,110 @@ button {
   font-weight: var(--font-weight-bold);
 }
 
+.btn-projects {
+  padding: 15px 15px 13px 30px;
+  font-size: 20px;
+}
+
+/* Секция Отзывы */
+.reviews__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews-arrows__wrapper {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 0;
+  right: 24px;
+}
+
+.reviews-arrow {
+  border: 0.7px solid var(--color-txt);
+  width: 42px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.reviews-slider {
+  margin-bottom: 20px;
+}
+
+.slider-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider__wrapper {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s ease;
+}
+
+.review-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  /* 48 = 2 gap по 24px */
+  background-color: var(--color-blue-light);
+  padding: 20px 24px 24px 20px;
+  font-size: 16px;
+}
+
+.review-card__name {
+  margin-bottom: 10px;
+}
+
+.review-card__title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.reviews-link {
+  font-size: 16px;
+  align-self: end;
+}
+
+.reviews-link-title {
+  text-decoration: underline;
+}
+
+/* Секция Калькулятор */
+/* Секция Hero */
+.calculator {
+  height: 684px;
+  overflow: hidden;
+}
+
+.calculator__wrapper {
+  display: flex;
+}
+
+.calculator-content__wrapper {
+  width: 50%;
+}
+
+.calculator-title {
+  margin-top: 157px;
+  margin-bottom: 40px;
+}
+
+.calculator-span {
+  color: var(--color-blue);
+}
+
+.calculator-subtitle {
+  max-width: 506px;
+  margin-bottom: 50px;
+}
+
+.calculator-image {
+  width: 50%;
+}
+
+.calculator-image img {
+  width: 100%;
+}
