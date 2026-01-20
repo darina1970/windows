@@ -626,3 +626,114 @@ button {
 .calculator-image img {
   width: 100%;
 }
+
+/* Footer */
+.footer {
+  background: var(--color-blue);
+  color: var(--color-white);
+  padding: 80px 0 60px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns:
+    minmax(284px, 1fr)
+    122px
+    minmax(448px, 1fr)
+    66px
+    minmax(139px, 1fr)
+    70px
+    minmax(150px, 1fr);
+}
+
+/* привязка колонок */
+.footer-col--contacts { grid-column: 1; }
+.footer-col--address  { grid-column: 3; }
+.footer-col--menu     { grid-column: 5; }
+.footer-col--catalog  { grid-column: 7; }
+
+/* .footer-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+} */
+
+.footer-item {
+  margin-bottom: 30px;
+}
+
+.footer-subtitle {
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 10px;
+  opacity: 70%;
+}
+
+.footer-tel,
+.footer-address {
+  font-size: 32px;
+}
+
+.footer-address {
+  line-height: 123%;
+}
+
+.footer-list {
+  font-size: 16px;
+}
+
+.footer-list li {
+  margin-bottom: 8px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.footer-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+  margin: 40px 0;
+}
+
+/* .footer-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+} */
+
+.footer-bottom {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 1fr)
+    122px
+    minmax(200px, 1fr)
+    66px
+    minmax(160px, 1fr)
+    70px
+    minmax(200px, 1fr);
+  align-items: center;
+}
+
+.footer-bottom-col--logo { grid-column: 1; }
+.footer-bottom-col--actions { grid-column: 3; }
+.footer-bottom-col--meta {
+  grid-column: 7;
+  text-align: right;
+}
+
+.footer-brand {
+  font-weight: 600;
+}
+
+.footer-bottom-right {
+  text-align: right;
+}
+
+.footer-policy {
+  opacity: 0.7;
+  font-size: 12px;
+}
+
