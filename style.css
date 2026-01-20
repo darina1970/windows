@@ -116,6 +116,10 @@ h1 {
   margin-bottom: 40px;
 }
 
+h4 {
+  font-size: 24px;
+}
+
 p {
   margin: 0;
 }
@@ -292,4 +296,66 @@ button {
   width: 50%;
   font-size: 24px;
   line-height: 120%;
+}
+
+.numbers-bottom {
+  padding-bottom: 0;
+}
+
+/* Секция  Преимущества*/
+.advantages {
+  height: 684px;
+}
+
+.advantages__wrapper {
+  position: relative;
+}
+
+.advantages__wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 50%;
+  height: 100%;
+  height: 684px;
+
+  background: url("./assets/images/home/image-2.jpg") center / cover no-repeat;
+  z-index: 0;
+}
+
+.advantages-content {
+  position: relative;
+  z-index: 1;
+}
+
+.advantages-top {
+  width: calc(50% - 60px);
+  font-size: 33px;
+  line-height: 120%;
+}
+
+.advantages-cards {
+  display: flex;
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.adv-card {
+  position: relative;
+  flex: 1;
+  background: var(--color-blue-light);
+  padding: 30px;
+}
+
+.adv-card__title {
+  margin-top: 84px;
+  margin-bottom: 20px;
+}
+
+.adv-card__icon {
+  position: absolute;
+  top: 30px;
+  left: 30px;
 }
