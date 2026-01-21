@@ -641,25 +641,31 @@ button {
     122px
     minmax(448px, 1fr)
     66px
-    minmax(139px, 1fr)
+    minmax(100px, 1fr)
     70px
-    minmax(150px, 1fr);
+    minmax(160px, 1fr);
 }
 
-/* привязка колонок */
-.footer-col--contacts { grid-column: 1; }
-.footer-col--address  { grid-column: 3; }
-.footer-col--menu     { grid-column: 5; }
-.footer-col--catalog  { grid-column: 7; }
+.footer-col--contacts { 
+  grid-column: 1; 
+}
 
-/* .footer-top {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 60px;
-} */
+.footer-col--address  { 
+  grid-column: 3; 
+}
 
-.footer-item {
-  margin-bottom: 30px;
+.footer-col--menu { 
+  grid-column: 5; 
+}
+
+.footer-col--catalogue { 
+  grid-column: 7; 
+}
+
+.footer-col--big {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .footer-subtitle {
@@ -683,7 +689,7 @@ button {
 }
 
 .footer-list li {
-  margin-bottom: 8px;
+  margin-bottom: 15px;
 }
 
 .footer-socials {
@@ -694,15 +700,10 @@ button {
 
 .footer-divider {
   height: 1px;
-  background: rgba(255,255,255,0.3);
+  background: var(--color-white);
+  opacity: 60%;
   margin: 40px 0;
 }
-
-/* .footer-bottom {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-} */
 
 .footer-bottom {
   display: grid;
@@ -717,23 +718,48 @@ button {
   align-items: center;
 }
 
-.footer-bottom-col--logo { grid-column: 1; }
-.footer-bottom-col--actions { grid-column: 3; }
+.footer-bottom-col--logo { 
+  grid-column: 1; 
+}
+
+.footer-bottom-col--actions { 
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.footer-actions__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .footer-bottom-col--meta {
   grid-column: 7;
+  height: 100%;
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.footer-brand {
-  font-weight: 600;
+.footer-action {
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: underline;
 }
 
-.footer-bottom-right {
-  text-align: right;
-}
-
-.footer-policy {
-  opacity: 0.7;
+.footer-policy,
+.footer-meta {
   font-size: 12px;
+  line-height: 18px;
+  opacity: 50%;
 }
 
+
+
+@media (hover: hover) and (pointer: fine) {
+  
+}
