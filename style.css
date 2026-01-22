@@ -465,7 +465,7 @@ button {
 .steps__top {
   display: flex;
   align-items: center;
-  gap: 276px;
+  gap: clamp(150px, 19.166vw, 276px);
   margin-bottom: 43px;
 }
 
@@ -823,6 +823,43 @@ button {
   .catalogue-item__title p{
     font-size: 20px;
   }
+  .steps__bottom {
+    flex-direction: column;
+  }
+  .steps__card--line {
+    position: relative;
+  }
+  .steps__card--line::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 0.5px;
+    height: 100%;
+    background-color: var(--color-blue);
+    z-index: 0;
+  }
+  .steps__card-number {
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-end;
+    border-bottom: none;
+  }
+  .steps__card-number svg {
+    order: -1;
+  }
+  .steps__card-content {
+    display: flex;
+  }
+  .steps__card-title,
+  .steps__card-description {
+    flex: 1;
+  }
+  .steps__card-title {
+    padding-left: 22px;
+  }
+
+
 }
 
 @media (max-width: 1024px) {
