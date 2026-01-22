@@ -279,11 +279,6 @@ button {
 }
 
 /* Секция Hero */
-/* .hero {
-  height: 684px;
-  overflow: hidden;
-} */
-
 .hero-image img {
     height: 684px;
 }
@@ -407,6 +402,12 @@ button {
   row-gap: 40px;
 }
 
+.catalogue-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .item-1 {
   grid-column: span 2;
 }
@@ -415,17 +416,19 @@ button {
   grid-column: span 2;
 }
 
+.catalogue-btn__bg,
+.catalogue-image__wrapper {
+  height: clamp(350px, 28.33vw, 408px);
+}
+
 .catalogue-item__image {
-  margin-bottom: 20px;
   width: 100%;
   height: 100%;
-  max-height: 408px;
-
+  object-fit: cover;
 }
 
 .catalogue-btn__bg {
   background-color: var(--color-blue);
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -442,6 +445,7 @@ button {
   justify-content: space-between;
   padding-right: 26px;
   cursor: pointer;
+  gap: 20px;
 }
 
 .catalogue-item__title p {
@@ -783,10 +787,12 @@ button {
   opacity: 50%;
 }
 
-
 @media (max-width: 1280px) {
   .header__wrapper-left {
     gap: 30px;
+  }
+  .catalogue-btn__bg {
+    font-size: 24px;
   }
 }
 
@@ -810,6 +816,12 @@ button {
   }
   .advantages-cards {
     margin-top: 40px;
+  }
+  .catalogue-item__title {
+    padding-right: 0;
+  }
+  .catalogue-item__title p{
+    font-size: 20px;
   }
 }
 
@@ -870,7 +882,31 @@ button {
   .adv-card:nth-child(2) {
     align-self: flex-end;
   }
-
+  .catalogue__content {
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 30px;
+  }
+  .item-1 {
+    grid-column: span 4;
+  }
+  .item-2 {
+    grid-column: span 2;
+  }
+  .item-3 {
+    grid-column: span 3;
+  }
+  .item-4 {
+    grid-column: span 3;
+  }
+  .item-5 {
+    grid-column: span 4;
+  }
+  .item-6 {
+    grid-column: span 2;
+  }
+  .catalogue-item__image {
+    object-position: center top;
+  }
 }
 
 @media (max-width: 768px) {
@@ -892,7 +928,28 @@ button {
   .numbers-bottom {
     padding-bottom: 0;
   }
+  .catalogue-btn__bg,
+  .catalogue-image__wrapper {
+    height: 300px;
+  }
+}
 
+@media (max-width: 650px) {
+  .catalogue__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .catalogue-image__wrapper {
+    height: 400px;
+  }
+  .catalogue-btn__bg {
+    height: unset;
+    padding: 15px 0;
+  }
+  .catalogue-btn__bg p {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -933,6 +990,11 @@ button {
   .number-text {
     width: 100%;
   }
+  .catalogue__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 @media (max-width: 391px) {
@@ -963,7 +1025,15 @@ button {
     margin-top: 70px;
   }
   .advantages-cards::before {
-    width: 390px;
+    width: 391px;
+  }
+  .catalogue-image__wrapper {
+    aspect-ratio: 14 / 9;
+    height: unset;
+    max-height: 230px;
+  }
+  .catalogue-image__wrapper img {
+    object-fit: cover;
   }
 }
 
