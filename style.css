@@ -843,13 +843,11 @@ button {
   content: "";
   position: absolute;
   top: 0;
-  /* left: 50%;
+  left: 50%;
   transform: translateX(-50%);
 
-  width: 100vw; */
+  width: 100vw;
 
-  left: calc(50% - 50vw);
-  right: calc(50% - 50vw);
   height: 100%;
 
   background: url("./assets/images/home/image-2.jpg") center / cover no-repeat;
@@ -963,6 +961,9 @@ button {
   .adv-card__title {
     font-size: 20px;
     margin-top: 70px;
+  }
+  .advantages-cards::before {
+    width: 390px;
   }
 }
 
