@@ -279,9 +279,13 @@ button {
 }
 
 /* Секция Hero */
-.hero {
+/* .hero {
   height: 684px;
   overflow: hidden;
+} */
+
+.hero-image img {
+    height: 684px;
 }
 
 .hero__wrapper {
@@ -812,9 +816,6 @@ button {
     margin-top: 80px;
     margin-bottom: 30px;
   }
-  .hero {
-    height: unset;
-  }
   .hero__wrapper {
     flex-direction: column;
     gap: 40px;
@@ -835,6 +836,12 @@ button {
 @media (max-width: 768px) {
   .hero-image img {
     height: 450px;
+  }
+  .number-text {
+    font-size: 20px;
+  }
+  .numbers-content {
+    padding: 20px 0 50px 0;
   }
 }
 
@@ -863,6 +870,15 @@ button {
   .hero-arrow svg {
     width: 11px;
   }
+  .numbers-content {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0 30px 0;
+  }
+  .number,
+  .number-text {
+    width: 100%;
+  }
 }
 
 @media (max-width: 391px) {
@@ -871,6 +887,15 @@ button {
   }
   .hero-image img {
     height: 280px;
+  }
+  .hero-subtitle br {
+    display: none;
+  }
+  .number {
+    font-size: 30px;
+  }
+  .number-text {
+    font-size: 14px;
   }
 }
 
