@@ -807,7 +807,9 @@ button {
     width: 100%;
     height: 100%;
     aspect-ratio: unset;
-
+  }
+  .advantages-cards {
+    margin-top: 40px;
   }
 }
 
@@ -831,6 +833,46 @@ button {
     width: 100%;
     padding: 0;
   }
+  .advantages {
+    height: unset;
+  }
+  .advantages__wrapper::after {
+    content: none;
+  }
+  .advantages-cards::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  /* left: 50%;
+  transform: translateX(-50%);
+
+  width: 100vw; */
+
+  left: calc(50% - 50vw);
+  right: calc(50% - 50vw);
+  height: 100%;
+
+  background: url("./assets/images/home/image-2.jpg") center / cover no-repeat;
+
+  z-index: -1;
+}
+  .advantages-top {
+    width: 100%;
+    font-size: 30px;
+  }
+  .advantages-cards {
+    position: relative;
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 0;
+  }
+  .adv-card {
+    width: 50%;
+  }
+  .adv-card:nth-child(2) {
+    align-self: flex-end;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -841,8 +883,18 @@ button {
     font-size: 20px;
   }
   .numbers-content {
-    padding: 20px 0 50px 0;
+    padding-top: 20px;
+    padding-bottom: 50px;
   }
+  .adv-card {
+    width: unset;
+    max-width: 440px;
+    min-height: 300px;
+  }
+  .numbers-bottom {
+    padding-bottom: 0;
+  }
+
 }
 
 @media (max-width: 520px) {
@@ -873,7 +925,11 @@ button {
   .numbers-content {
     flex-direction: column;
     gap: 10px;
-    padding: 15px 0 30px 0;
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+  .numbers-bottom {
+    padding-bottom: 0;
   }
   .number,
   .number-text {
@@ -896,6 +952,17 @@ button {
   }
   .number-text {
     font-size: 14px;
+  }
+  .advantages-top {
+    font-size: 24px;
+  }
+  .adv-card {
+    width: 100%;
+    min-height: 237px;
+  }
+  .adv-card__title {
+    font-size: 20px;
+    margin-top: 70px;
   }
 }
 
