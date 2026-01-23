@@ -663,9 +663,11 @@ button {
 /* Footer */
 .footer-socials-mobile,
 .footer-meta__wrapper,
-.footer-right-contacts__wrapper {
+.footer-right-contacts__wrapper,
+.footer-actions__wrapper--mobile {
   display: none;
 }
+
 .footer {
   background: var(--color-blue);
   color: var(--color-white);
@@ -682,9 +684,10 @@ button {
   justify-content: space-between;
 }
 
-.footer-top-left {
+.footer-top-left,
+.footer-bottom-left {
   display: flex;
-  width: 60%;
+  width: 65%;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -694,17 +697,17 @@ button {
   gap: 40px;
 }
 
-.footer-bottom-left {
+.footer-menu-catalogue {
   display: flex;
-  width: 60%;
+  gap: 70px;
 }
 
 .footer-item--small {
-  width: calc(50% - 20px);
+  width: calc(45% - 20px);
 }
 
 .footer-item--big {
-  width: 50%;
+  width: 55%;
 }
 
 .footer-item-contacts__wrapper {
@@ -746,6 +749,10 @@ button {
   font-size: 16px;
 }
 
+.footer-time-info {
+  font-size: 24px;
+}
+
 .footer-list li {
   margin-bottom: 15px;
 }
@@ -774,6 +781,12 @@ button {
   font-size: 12px;
   line-height: 18px;
   opacity: 50%;
+}
+
+.footer-actions__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 @media (max-width: 1280px) {
@@ -847,20 +860,31 @@ button {
   .steps__card-title {
     padding-left: 22px;
   }
+  .footer {
+    padding-top: 60px;
+  }
   .footer-item-contacts__wrapper {
     display: none;
   }
   .footer-right-contacts__wrapper {
     display: flex;
     flex-direction: column;
+    gap: 30px;
   }
   .footer-top {
     flex-direction: column;
+    gap: 40px;
   }
   .footer-top-left,
   .footer-top-right,
   .footer-bottom-left {
     width: 100%;
+  }
+  .footer-item--small {
+    width: calc(50% - 20px);
+  }
+  .footer-item--big {
+    width: 50%;
   }
   .footer-bottom-left,
   .footer-top-right {
@@ -869,23 +893,42 @@ button {
   .footer-socials__wrapper {
     display: flex;
     flex-direction: column;
-    width: calc(50% - 20px);
+    width: 100%;
+  }
+  .footer-socials {
+    margin-top: 0;
   }
   .footer-menu-catalogue {
+    width: 50%;
     display: flex;
     gap: 40px;
   }
   .footer-bottom-right {
     display: none;
   }
+  .footer-policy__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-address {
+    font-size: 24px;
+  }
+  .footer-action {
+    font-size: 20px;
+  }
   .footer-meta__wrapper {
     display: flex;
+    justify-content: space-between;
   }
   .footer-actions__wrapper--mobile {
     display: none;
   }
   .copyright {
     order: -1;
+  }
+  .footer-email-info {
+    font-size: 24px;
   }
 }
 
