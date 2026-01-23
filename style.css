@@ -307,6 +307,7 @@ button {
 
 .hero-image img {
   width: 100%;
+  object-fit: cover;
 }
 
 /* Секция Numbers */
@@ -623,7 +624,6 @@ button {
 }
 
 /* Секция Калькулятор */
-/* Секция Hero */
 .calculator {
   height: 684px;
   overflow: hidden;
@@ -657,6 +657,7 @@ button {
 
 .calculator-image img {
   width: 100%;
+  object-fit: cover;
 }
 
 /* Footer */
@@ -670,11 +671,11 @@ button {
   display: grid;
   grid-template-columns:
     minmax(284px, 1fr)
-    122px
+    8.472vw
     minmax(448px, 1fr)
-    66px
+    4.583vw
     minmax(100px, 1fr)
-    70px
+    4.861vw
     minmax(160px, 1fr);
 }
 
@@ -797,6 +798,17 @@ button {
   .catalogue-btn__bg {
     font-size: 24px;
   }
+  .footer-top {
+    display: grid;
+    grid-template-columns:
+      minmax(284px, 1fr)
+      40px
+      minmax(448px, 1fr)
+      40px
+      minmax(100px, 1fr)
+      40px
+      minmax(160px, 1fr);
+  }
 }
 
 @media (max-width: 1180px) {
@@ -870,18 +882,25 @@ button {
     margin-top: 80px;
     margin-bottom: 30px;
   }
-  .hero__wrapper {
+  h2 {
+    font-size: 42px;
+  }
+  .hero__wrapper,
+  .calculator__wrapper {
     flex-direction: column;
     gap: 40px;
   }
   .hero-title {
     max-width: 600px;
   }
-  .hero-image img {
+  .hero-image img,
+  .calculator-image img {
     height: 550px;
   }
   .hero-image,
-  .hero-content__wrapper {
+  .hero-content__wrapper,
+  .calculator-image,
+  .calculator-content__wrapper {
     width: 100%;
     padding: 0;
   }
@@ -977,10 +996,22 @@ button {
   .review-card {
     flex: 0 0 calc((100% - 24px) / 2);
   }
+  .calculator {
+    height: unset;
+  }
+  .calculator-title {
+    margin-top: 0;
+    max-width: 600px;
+  }
+  .calculator-subtitle {
+    max-width: 503px;
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero-image img {
+  .hero-image img,
+  .calculator-image img {
     height: 450px;
   }
   .number-text {
@@ -1015,10 +1046,12 @@ button {
     height: clamp(230px, 42.32vw, 325px);
   }
   .reviews__wrapper {
-    padding-bottom: 20px;
+    padding-bottom: 42px !important;
   }
   .reviews-link {
-    align-self: start;
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
   }
   .reviews-arrows__wrapper {
     top: unset;
@@ -1063,8 +1096,15 @@ button {
     margin-bottom: 20px;
     margin-top: 60px;
   }
+  h2 {
+    font-size: 32px;
+  }
   section {
     margin-bottom: 80px;
+  }
+  .hero-image img,
+  .calculator-image img {
+    height: 350px;
   }
   .hero-subtitle {
     margin-bottom: 24px;
@@ -1103,7 +1143,8 @@ button {
   .container {
     padding: 0 16px;
   }
-  .hero-image img {
+  .hero-image img,
+  .calculator-image img {
     height: 280px;
   }
   .hero-subtitle br {
