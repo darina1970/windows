@@ -661,44 +661,69 @@ button {
 }
 
 /* Footer */
+.footer-socials-mobile,
+.footer-meta__wrapper,
+.footer-right-contacts__wrapper {
+  display: none;
+}
 .footer {
   background: var(--color-blue);
   color: var(--color-white);
   padding: 80px 0 60px;
 }
 
-.footer-top {
-  display: grid;
-  grid-template-columns:
-    minmax(284px, 1fr)
-    8.472vw
-    minmax(448px, 1fr)
-    4.583vw
-    minmax(100px, 1fr)
-    4.861vw
-    minmax(160px, 1fr);
+.footer-top,
+.footer-bottom {
+  display: flex;
+  gap: 50px;
 }
 
-.footer-col--contacts { 
-  grid-column: 1; 
+.footer-bottom {
+  justify-content: space-between;
 }
 
-.footer-col--address  { 
-  grid-column: 3; 
+.footer-top-left {
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.footer-col--menu { 
-  grid-column: 5; 
+.footer-top-right {
+  display: flex;
+  gap: 40px;
 }
 
-.footer-col--catalogue { 
-  grid-column: 7; 
+.footer-bottom-left {
+  display: flex;
+  width: 60%;
 }
 
-.footer-col--big {
+.footer-item--small {
+  width: calc(50% - 20px);
+}
+
+.footer-item--big {
+  width: 50%;
+}
+
+.footer-item-contacts__wrapper {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.footer-bottom-actions {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-bottom-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .footer-subtitle {
@@ -738,46 +763,6 @@ button {
   margin: 40px 0;
 }
 
-.footer-bottom {
-  display: grid;
-  grid-template-columns:
-    minmax(220px, 1fr)
-    122px
-    minmax(200px, 1fr)
-    66px
-    minmax(160px, 1fr)
-    70px
-    minmax(200px, 1fr);
-  align-items: center;
-}
-
-.footer-bottom-col--logo { 
-  grid-column: 1; 
-}
-
-.footer-bottom-col--actions { 
-  grid-column: 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.footer-actions__wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.footer-bottom-col--meta {
-  grid-column: 7;
-  height: 100%;
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .footer-action {
   font-size: 16px;
   line-height: 18px;
@@ -797,17 +782,6 @@ button {
   }
   .catalogue-btn__bg {
     font-size: 24px;
-  }
-  .footer-top {
-    display: grid;
-    grid-template-columns:
-      minmax(284px, 1fr)
-      40px
-      minmax(448px, 1fr)
-      40px
-      minmax(100px, 1fr)
-      40px
-      minmax(160px, 1fr);
   }
 }
 
@@ -873,8 +847,46 @@ button {
   .steps__card-title {
     padding-left: 22px;
   }
-
-
+  .footer-item-contacts__wrapper {
+    display: none;
+  }
+  .footer-right-contacts__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-top {
+    flex-direction: column;
+  }
+  .footer-top-left,
+  .footer-top-right,
+  .footer-bottom-left {
+    width: 100%;
+  }
+  .footer-bottom-left,
+  .footer-top-right {
+    gap: 20px;
+  }
+  .footer-socials__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 20px);
+  }
+  .footer-menu-catalogue {
+    display: flex;
+    gap: 40px;
+  }
+  .footer-bottom-right {
+    display: none;
+  }
+  .footer-meta__wrapper {
+    display: flex;
+  }
+  .footer-actions__wrapper--mobile {
+    display: none;
+  }
+  .copyright {
+    order: -1;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1009,6 +1021,8 @@ button {
   }
 }
 
+
+
 @media (max-width: 768px) {
   .hero-image img,
   .calculator-image img {
@@ -1084,6 +1098,44 @@ button {
   .review-card {
     flex: 0 0 100%;
   }
+  .footer-item--big,
+  .footer-item--small {
+    width: 100%;
+  }
+  .footer-socials-mobile {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+  }
+  .tel {
+    order: 0;
+  }
+  .montage {
+    order: 1;
+  }
+  .address {
+    order: 3;
+  }
+  .time {
+    order: 4;
+  }
+  .footer-socials__wrapper {
+    display: none;
+  }
+  .footer-top-right {
+    flex-direction: column;
+  }
+  .footer-actions__wrapper--mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-bottom-left {
+    flex-direction: column;
+  }
+  .footer-actions__wrapper {
+    display: none;
+  }
+
 }
 
 @media (max-width: 520px) {
