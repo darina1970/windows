@@ -540,6 +540,7 @@ button {
 
 .project-item__title {
   font-size: 24px;
+  margin-top: 20px;
 }
 
 .project-btn__wrapper {
@@ -598,7 +599,6 @@ button {
 
 .review-card {
   flex: 0 0 calc((100% - 48px) / 3);
-  /* 48 = 2 gap по 24px */
   background-color: var(--color-blue-light);
   padding: 20px 24px 24px 20px;
   font-size: 16px;
@@ -974,6 +974,9 @@ button {
     margin-top: 10px;
     font-size: 20px;
   }
+  .review-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1011,7 +1014,16 @@ button {
   .project-image__wrapper {
     height: clamp(230px, 42.32vw, 325px);
   }
-
+  .reviews__wrapper {
+    padding-bottom: 20px;
+  }
+  .reviews-link {
+    align-self: start;
+  }
+  .reviews-arrows__wrapper {
+    top: unset;
+    bottom: 0;
+  }
 }
 
 @media (max-width: 650px) {
@@ -1035,6 +1047,9 @@ button {
   }
   .project-item {
     width: 100%;
+  }
+  .review-card {
+    flex: 0 0 100%;
   }
 }
 
@@ -1081,6 +1096,7 @@ button {
     flex-direction: column;
     gap: 20px;
   }
+
 }
 
 @media (max-width: 391px) {
