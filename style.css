@@ -973,6 +973,27 @@ button {
   grid-column: 7 / span 3;
 }
 
+/* Страница Доставка */
+.delivery__wrapper {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.doted {
+  position: relative;
+  padding-left: 20px;
+}
+.doted::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.delivery-title {
+  font-weight: var(--font-weight-bold);
+}
+
 @media (max-width: 1280px) {
   .header__wrapper-left {
     gap: 30px;
@@ -1302,6 +1323,9 @@ button {
   .portfolio-item img {
     height: 325px;
   }
+  .delivery__wrapper {
+    width: 80%;
+  }
 }
 
 
@@ -1362,6 +1386,9 @@ button {
   }
   .product-card__title {
     font-size: 24px;
+  }
+  .delivery__wrapper {
+    font-size: 16px;
   }
 }
 
@@ -1451,6 +1478,9 @@ button {
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+  .delivery__wrapper {
+    width: 100%;
   }
 }
 
