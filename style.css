@@ -153,6 +153,10 @@ button {
   cursor: pointer;
 }
 
+.color-blue {
+  color: var(--color-blue);
+}
+
 .header {
     background-color: var(--color-blue-light);
     height: 80px;
@@ -169,6 +173,7 @@ button {
   background: var(--color-txt);
   transition: all 0.3s ease;
 }
+
 
 .header__wrapper {
     height: 100%;
@@ -824,7 +829,6 @@ button {
   row-gap: 56px;
 }
 
-/* Карточка */
 .catalog-card {
   display: flex;
   flex-direction: column;
@@ -854,6 +858,136 @@ button {
   border: 1px solid rgba(47, 47, 47, 0.6);
   text-align: center;
 }
+
+/* Страница карточки товара */
+.catalogue-return {
+  opacity: 60%;
+}
+.product-card__image--mobile {
+  display: none;
+}
+.product-card__wrapper {
+  display: flex;
+  gap: 44px;
+  margin-top: 30px;
+}
+.product-card__title {
+  font-weight: var(--font-weight-regular);
+}
+.product-card__text {
+  max-width: 525px;
+}
+.product-card__subtitle {
+  font-weight: var(--font-weight-bold);
+}
+.product-card__description {
+  flex: 1;
+}
+.product-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.product-card__list li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.product-card__list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.product-card__right {
+  display: flex;
+  flex-direction: column;
+  width: clamp(348px, 47.5vw, 684px);
+  gap: 30px;
+}
+.product-card__image img {
+  width: 100%;
+  height: auto;
+  max-height: 684px;  
+}
+
+.product-card__price {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.product-card__price__top {
+  display: flex;
+  gap: clamp(40px, 4.236vw, 61px);
+}
+
+.product-card__price__middle {
+  line-height: 140%;
+}
+
+.product-card__price-list {
+  padding-top: 17px;
+}
+
+.product-card__price button {
+  width: fit-content;
+}
+/* .catalogue-return {
+  opacity: 60%;
+  margin-bottom: 30px;
+}
+.product-card__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "title image"
+  "description image"
+  "advantages image"
+  "characteristics image"
+  "compatibility price";
+  gap: 20px;
+}
+
+.product-card__title {
+  grid-area: title;
+}
+
+.product-card__title h2{
+  margin-bottom: 0;
+}
+
+.product-card__description {
+  grid-area: description;
+  margin-top: -10px;
+}
+
+.product-card__advantages {
+  grid-area: advantages;
+}
+
+.product-card__characteristics {
+  grid-area: characteristics;
+}
+
+.product-card__compatibility {
+  grid-area: compatibility;
+}
+
+.product-card__image {
+  grid-area: image;
+}
+
+.product-card__price {
+  grid-area: price;
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  max-height: 684px;
+  object-fit: cover;
+} */
 
 @media (max-width: 1280px) {
   .header__wrapper-left {
@@ -1135,6 +1269,33 @@ button {
   .catalog-card__title {
     font-size: 20px;
   }
+  .product-card__image--mobile {
+    display: block;
+    width: calc(50% - 20px);
+  }
+  .product-card__image--mobile img {
+    width: 100%;
+    height: auto;
+  }
+  .product-card__text {
+    flex: 1;
+  }
+  .product-card__image {
+    display: none;
+  }
+  .product-card__wrapper {
+    flex-direction: column;
+  }
+  .product-card__text--mobile {
+    display: flex;
+    gap: 20px;
+  }
+  .product-card__right {
+    width: unset;
+  }
+  .product-card__price__top {
+    gap: clamp(80px, 19.79vw, 152px);
+  }
 }
 
 
@@ -1192,6 +1353,9 @@ button {
   }
   .catalog-tab {
     font-size: 20px;
+  }
+  .product-card__title {
+    font-size: 24px;
   }
 }
 
@@ -1257,7 +1421,26 @@ button {
   .footer-actions__wrapper {
     display: none;
   }
-
+  .product-card__wrapper {
+    font-size: 20px;
+  }
+  .product-card__price__top {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .product-card__price-list {
+    padding-top: 0;
+  }
+  .product-card__text--mobile {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .product-card__image--mobile {
+    width: 348px;
+  }
+  .product-card__text {
+    max-width: unset;
+  } 
 }
 
 @media (max-width: 520px) {
@@ -1325,7 +1508,7 @@ button {
   .catalog-tab {
     font-size: 16px;
   }
-  
+
 }
 
 @media (max-width: 391px) {
