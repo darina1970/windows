@@ -933,61 +933,45 @@ button {
 .product-card__price button {
   width: fit-content;
 }
-/* .catalogue-return {
-  opacity: 60%;
-  margin-bottom: 30px;
-}
-.product-card__wrapper {
+
+/* Страница Портфолио */
+.portfolio__wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-  "title image"
-  "description image"
-  "advantages image"
-  "characteristics image"
-  "compatibility price";
+  grid-template-columns: repeat(12, 1fr);
+  gap: 40px 24px;
+}
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
-.product-card__title {
-  grid-area: title;
-}
-
-.product-card__title h2{
-  margin-bottom: 0;
-}
-
-.product-card__description {
-  grid-area: description;
-  margin-top: -10px;
-}
-
-.product-card__advantages {
-  grid-area: advantages;
-}
-
-.product-card__characteristics {
-  grid-area: characteristics;
-}
-
-.product-card__compatibility {
-  grid-area: compatibility;
-}
-
-.product-card__image {
-  grid-area: image;
-}
-
-.product-card__price {
-  grid-area: price;
-}
-
-.product-card__image img {
+.portfolio-item img {
   width: 100%;
-  height: 100%;
-  max-height: 684px;
+  height: 370px;
+  display: block;
   object-fit: cover;
-} */
+}
+
+.portfolio-title {
+  font-size: 24px;
+}
+
+.portfolio-item:nth-child(4n + 1) {
+  grid-column: 1 / span 3;
+}
+
+.portfolio-item:nth-child(4n + 2) {
+  grid-column: 7 / span 6;
+}
+
+.portfolio-item:nth-child(4n + 3) {
+  grid-column: 1 / span 6;
+}
+
+.portfolio-item:nth-child(4n + 4) {
+  grid-column: 7 / span 3;
+}
 
 @media (max-width: 1280px) {
   .header__wrapper-left {
@@ -1296,6 +1280,28 @@ button {
   .product-card__price__top {
     gap: clamp(80px, 19.79vw, 152px);
   }
+  .portfolio__wrapper {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px 24px;
+  }
+  .portfolio-item {
+    gap: 10px;
+  }
+  .portfolio-item:nth-child(4n + 1),
+  .portfolio-item:nth-child(4n + 4) {
+    grid-column: span 2;
+  }
+
+  .portfolio-item:nth-child(4n + 2),
+  .portfolio-item:nth-child(4n + 3) {
+    grid-column: span 3;
+  }
+  .portfolio-title {
+    font-size: 20px;
+  }
+  .portfolio-item img {
+    height: 325px;
+  }
 }
 
 
@@ -1440,7 +1446,12 @@ button {
   }
   .product-card__text {
     max-width: unset;
-  } 
+  }
+  .portfolio__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -1508,7 +1519,9 @@ button {
   .catalog-tab {
     font-size: 16px;
   }
-
+  .portfolio-item img {
+    height: 300px;
+  }
 }
 
 @media (max-width: 391px) {
@@ -1549,6 +1562,9 @@ button {
   }
   .catalogue-image__wrapper img {
     object-fit: cover;
+  }
+  .portfolio-item img {
+    height: 230px;
   }
 }
 
