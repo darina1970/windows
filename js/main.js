@@ -76,4 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', updateSlider);
   updateSlider();
+
+  
 });
