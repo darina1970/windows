@@ -1087,6 +1087,130 @@ button {
   object-fit: cover;
 }
 
+/* Страница статьи блога */
+.article-hero {
+  position: relative;
+  height: 390px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.article-hero__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.article-hero__wrapper h2 {
+  margin-bottom: 0;
+}
+.article-page {
+  margin-top: 60px;
+  margin-bottom: 100px;
+  display: flex;
+  gap: 40px;
+}
+.article-image__wrapper {
+  height: 400px;
+  background-color: rgba(206, 206, 206, 1);
+}
+.article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 1;
+}
+.article-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Форма */
+.form {
+  padding: 32px;
+  width: 526px;
+  height: fit-content;
+  background-color: var(--color-blue-light);
+}
+.form-title {
+  line-height: 130%;
+  font-weight: var(--font-weight-regular);
+  margin-bottom: 10px;
+}
+
+.form-subtitle {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -2%;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-btn {
+  width: 100%;
+  padding: 16px 16px;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -2%;
+  margin-top: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    font-size: 16px;
+    color: #2d3e50;
+    background: #f5f8fa;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.1);
+}
+
+input::placeholder {
+    color: #8a9ba8;
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%235a6c7d' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    cursor: pointer;
+}
+
+.privacy-text {
+  opacity: 70%;
+  font-size: 12px;
+  line-height: 110%;
+  margin-top: 10px;
+}
+
+.contact-section {
+    margin-top: 40px;
+}
+
+.contact-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.phone-link {
+    color: var(--color-blue);
+    font-size: 32px;
+}
+
+
 @media (max-width: 1280px) {
   .header__wrapper-left {
     gap: 30px;
