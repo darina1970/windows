@@ -493,10 +493,12 @@ button {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 18px;
   border-bottom: 1px solid var(--color-blue);
   padding: 0;
   margin-bottom: 28px;
+  color: var(--color-blue);
+  font-size: 24px;
 }
 
 .steps__card-content {
@@ -510,6 +512,7 @@ button {
 
 .steps__card-description {
   font-size: 16px;
+  opacity: 70%;
 }
 
 .no-line {
@@ -1354,7 +1357,7 @@ input:-webkit-autofill:active {
   .steps__card--line::before {
     content: '';
     position: absolute;
-    top: 10px;
+    top: 12px;
     left: 0;
     width: 0.5px;
     height: 100%;
@@ -1366,6 +1369,8 @@ input:-webkit-autofill:active {
     gap: 10px;
     align-items: flex-end;
     border-bottom: none;
+    font-size: 20px;
+    line-height: 16px;
   }
   .steps__card-number svg {
     order: -1;
@@ -1871,6 +1876,20 @@ input:-webkit-autofill:active {
   }
   .footer-divider {
     margin: 35px 0 20px 0;
+  }
+  .steps__card {
+    padding-bottom: 30px;
+  }
+  .steps__card-content {
+    flex-direction: column;
+  }
+  .steps__card-title {
+    margin-bottom: 10px;
+    line-height: 100%;
+    min-height: unset;
+  }
+  .steps__card-description {
+    padding-left: 22px;
   }
 }
 
