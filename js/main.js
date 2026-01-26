@@ -6,6 +6,74 @@ document.addEventListener('DOMContentLoaded', () => {
     text.textContent = select.value;
   });
 
+  const burger = document.querySelector('.header__burger');
+  const burgerMenu = document.querySelector('.burger-menu');
+  const overlay = document.querySelector('.burger-overlay');
+  const burgerLinks = document.querySelectorAll('.burger-menu a');
+
+  // Функция открытия/закрытия меню
+  function toggleMenu() {
+    burger.classList.toggle('active');
+    burgerMenu.classList.toggle('open');
+    overlay.classList.toggle('active');
+  }
+
+  // Клик по бургеру
+  burger.addEventListener('click', toggleMenu);
+
+  // Клик по overlay
+  overlay.addEventListener('click', toggleMenu);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && burgerMenu.classList.contains('open')) {
+      toggleMenu();
+    }
+  });
+
+  burgerLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        toggleMenu();
+
+        const target = document.querySelector(href);
+        if (target) {
+          const headerHeight = document.querySelector('.header').offsetHeight;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      } else {
+        toggleMenu();
+        window.location.href = href;
+      }
+    });
+  });
+
+  const catalogTrigger = document.querySelector('li[data-submenu="catalog"]'); // Главный пункт "Каталог"
+  const catalogLevel = document.querySelector('.burger-menu__level--catalog');
+  const mainLevel = document.querySelector('.burger-menu__level--main');
+  const backButtons = document.querySelectorAll('.burger-back');
+
+  // Открыть подуровень при клике на "Каталог"
+  catalogTrigger.addEventListener('click', () => {
+    mainLevel.classList.remove('active');       // скрываем главное меню
+    catalogLevel.classList.add('active');       // показываем каталог
+  });
+
+  // Вернуться назад при клике на кнопку "Назад"
+  backButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catalogLevel.classList.remove('active');  // скрываем подуровень
+      mainLevel.classList.add('active');        // показываем главное меню
+    });
+  });
+
   const slider = document.querySelector('.slider__wrapper');
   const slides = document.querySelectorAll('.review-card');
   const prevBtn = document.querySelector('.reviews-arrow.prev');
