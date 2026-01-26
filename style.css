@@ -51,7 +51,7 @@ html {
 }
 
 body {
-  /* min-width: 370px; */
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   height: 100%;
