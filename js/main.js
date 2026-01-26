@@ -60,17 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainLevel = document.querySelector('.burger-menu__level--main');
   const backButtons = document.querySelectorAll('.burger-back');
 
-  // Открыть подуровень при клике на "Каталог"
   catalogTrigger.addEventListener('click', () => {
-    mainLevel.classList.remove('active');       // скрываем главное меню
-    catalogLevel.classList.add('active');       // показываем каталог
+    mainLevel.classList.remove('active');
+    catalogLevel.classList.add('active'); 
   });
 
-  // Вернуться назад при клике на кнопку "Назад"
   backButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      catalogLevel.classList.remove('active');  // скрываем подуровень
-      mainLevel.classList.add('active');        // показываем главное меню
+      catalogLevel.classList.remove('active');
+      mainLevel.classList.add('active');
     });
   });
 
