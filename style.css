@@ -51,7 +51,7 @@ html {
 }
 
 body {
-  min-width: 390px;
+  min-width: 370px;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -2199,7 +2199,7 @@ input:-webkit-autofill:active {
     margin-top: 70px;
   }
   .advantages-cards::before {
-    width: 391px;
+    width: 100%;
   }
   .catalogue-image__wrapper {
     aspect-ratio: 14 / 9;
