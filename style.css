@@ -748,12 +748,14 @@ button {
 .slider-viewport {
   overflow: hidden;
   width: 100%;
+  touch-action: pan-y;
 }
 
-.slider__wrapper {
+.slider-track {
   display: flex;
   gap: 24px;
-  transition: transform 0.4s ease;
+  will-change: transform;
+  transition: transform 0.3s ease;
 }
 
 .review-card {

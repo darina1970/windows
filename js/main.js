@@ -72,94 +72,113 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const slider = document.querySelector('.slider__wrapper');
-  const slides = document.querySelectorAll('.review-card');
-  const prevBtn = document.querySelector('.reviews-arrow.prev');
-  const nextBtn = document.querySelector('.reviews-arrow.next');
+  const viewport = document.querySelector('.slider-viewport');
+const track = document.querySelector('.slider-track');
+const slides = document.querySelectorAll('.review-card');
+const prevBtn = document.querySelector('.reviews-arrow.prev');
+const nextBtn = document.querySelector('.reviews-arrow.next');
 
-  const gap = 24;
-  let index = 0;
+const GAP = 24;
+let index = 0;
 
-  function getSlidesToShow() {
-    if (window.innerWidth <= 650) return 1;
-    if (window.innerWidth < 1024) return 2;
-    return 3;
-  }
+// ======================
+// НАСТРОЙКИ
+// ======================
+function getSlidesToShow() {
+  if (window.innerWidth <= 650) return 1;
+  if (window.innerWidth < 1024) return 2;
+  return 3;
+}
 
-  function updateSlider() {
-    const slidesToShow = getSlidesToShow();
-    const slideWidth = slides[0].offsetWidth + gap;
-    const maxIndex = slides.length - slidesToShow;
+function getSlideWidth() {
+  return slides[0].offsetWidth + GAP;
+}
 
-    if (index > maxIndex) index = maxIndex < 0 ? 0 : maxIndex;
-    if (index < 0) index = 0;
+function getMaxIndex() {
+  return slides.length - getSlidesToShow();
+}
 
-    slider.style.transition = 'transform 0.3s ease';
-    slider.style.transform = `translateX(-${index * slideWidth}px)`;
-  }
+// ======================
+// ОБНОВЛЕНИЕ ПОЗИЦИИ
+// ======================
+function updateSlider(animate = true) {
+  if (index < 0) index = 0;
+  if (index > getMaxIndex()) index = getMaxIndex();
 
-  nextBtn.addEventListener('click', () => {
-    const slidesToShow = getSlidesToShow();
-    if (index < slides.length - slidesToShow) {
-      index++;
-      updateSlider();
-    }
-  });
+  track.style.transition = animate ? 'transform 0.3s ease' : 'none';
+  track.style.transform = `translateX(-${index * getSlideWidth()}px)`;
+}
 
-  prevBtn.addEventListener('click', () => {
-    if (index > 0) {
-      index--;
-      updateSlider();
-    }
-  });
-
-  // ===== Мобильный свайп =====
-  let startX = 0;
-  let moveX = 0;
-  let isSwiping = false;
-
-  slider.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    isSwiping = true;
-    slider.style.transition = 'none';
-  });
-
-  slider.addEventListener('touchmove', (e) => {
-    if (!isSwiping) return;
-    moveX = e.touches[0].clientX;
-    const diff = startX - moveX;
-    const slidesToShow = getSlidesToShow();
-    const slideWidth = slides[0].offsetWidth + gap;
-
-    // Сдвигаем слайдер прямо во время свайпа
-    let tempIndex = index + diff / slideWidth;
-    if (tempIndex < 0) tempIndex = 0;
-    if (tempIndex > slides.length - slidesToShow) tempIndex = slides.length - slidesToShow;
-
-    slider.style.transform = `translateX(-${tempIndex * slideWidth}px)`;
-  });
-
-  slider.addEventListener('touchend', () => {
-    if (!isSwiping) return;
-    const diff = startX - moveX;
-    const slidesToShow = getSlidesToShow();
-
-    if (diff > 50 && index < slides.length - slidesToShow) {
-      index++;
-    } else if (diff < -50 && index > 0) {
-      index--;
-    }
-
-    slider.style.transition = 'transform 0.3s ease';
+// ======================
+// КНОПКИ
+// ======================
+nextBtn.addEventListener('click', () => {
+  if (index < getMaxIndex()) {
+    index++;
     updateSlider();
-    isSwiping = false;
-  });
+  }
+});
 
-  // Ресайз
-  window.addEventListener('resize', updateSlider);
+prevBtn.addEventListener('click', () => {
+  if (index > 0) {
+    index--;
+    updateSlider();
+  }
+});
 
-  // Инициализация
+// ======================
+// SWIPE (MOBILE)
+// ======================
+let startX = 0;
+let currentX = 0;
+let isSwiping = false;
+
+viewport.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+  currentX = startX;
+  isSwiping = true;
+  track.style.transition = 'none';
+});
+
+viewport.addEventListener('touchmove', (e) => {
+  if (!isSwiping) return;
+
+  currentX = e.touches[0].clientX;
+  const diff = startX - currentX;
+  const offset = index * getSlideWidth() + diff;
+
+  const maxOffset = getMaxIndex() * getSlideWidth();
+  const limitedOffset = Math.max(0, Math.min(offset, maxOffset));
+
+  track.style.transform = `translateX(-${limitedOffset}px)`;
+});
+
+viewport.addEventListener('touchend', () => {
+  if (!isSwiping) return;
+
+  const diff = startX - currentX;
+
+  if (diff > 50 && index < getMaxIndex()) {
+    index++;
+  } else if (diff < -50 && index > 0) {
+    index--;
+  }
+
   updateSlider();
+  isSwiping = false;
+});
+
+// ======================
+// RESIZE
+// ======================
+window.addEventListener('resize', () => {
+  updateSlider(false);
+});
+
+// ======================
+// INIT
+// ======================
+updateSlider();
 
   
 });
