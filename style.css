@@ -321,6 +321,46 @@ button {
 }
 
 
+/* Модалка */
+/* MODAL BASE */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+}
+
+.modal.active {
+  display: block;
+}
+
+/* OVERLAY */
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-form {
+  
+}
+
+/* CLOSE */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* BODY LOCK */
+body.modal-open {
+  overflow: hidden;
+}
+
 .header__wrapper {
     height: 100%;
     display: flex;
