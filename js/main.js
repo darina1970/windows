@@ -1,10 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const select = document.querySelector('.city-select');
-  const text = document.querySelector('.city-text');
+  const setModalHeight = () => {
+    document.documentElement.style.setProperty(
+      '--vh',
+      `${window.innerHeight * 0.01}px`
+    );
+  };
 
-  select.addEventListener('change', () => {
-    text.textContent = select.value;
-  });
+  setModalHeight();
+
+  window.addEventListener('resize', setModalHeight);
+    const select = document.querySelector('.city-select');
+    const text = document.querySelector('.city-text');
+
+    select.addEventListener('change', () => {
+      text.textContent = select.value;
+    });
 
   const burger = document.querySelector('.header__burger');
   const burgerMenu = document.querySelector('.burger-menu');
@@ -163,35 +173,103 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateSlider();
 
+  // Выбор города
+  const DEFAULT_CITY = 'Белгород';
+  const STORAGE_KEY = 'selectedCity';
 
-  const requestBtn = document.getElementById('request-btn');
+  // Модалка
   const modal = document.getElementById('request-modal');
+  const openBtn = document.getElementById('request-btn');
+  const closeBtn = modal.querySelector('.modal-close');
   const modalOverlay = modal.querySelector('.modal-overlay');
-  const modalClose = modal.querySelector('.modal-close');
 
-  function openModal() {
-    modal.classList.add('active');
+  // Город
+  const citySelect = document.querySelector('.city-select');
+  const cityText = document.querySelector('.city-text');
+
+  // Промокод
+  const promoField = modal.querySelector('.promo-field');
+  const promoInput = promoField?.querySelector('input');
+
+  // Hero
+  const heroTitle = document.querySelector('.hero-title');
+  const heroCity = document.querySelector('.hero-city');
+  const heroBtnText = document.querySelector('.hero-btn-text');
+
+
+  const updateFormByCity = (city) => {
+    if (!promoField) return;
+    promoField.hidden = (city === DEFAULT_CITY);
+    if (city === DEFAULT_CITY) promoInput.value = '';
+  };
+
+    const updateHeroByCity = (city) => {
+    if (!heroTitle || !heroCity || !heroBtnText) return;
+
+    if (city === DEFAULT_CITY) {
+      heroTitle.textContent = 'Окна и остекление под ключ в';
+      heroCity.textContent = 'Белгороде';
+      heroBtnText.textContent = 'Рассчитать с монтажом';
+    } else {
+      heroTitle.textContent = 'Поставка окон напрямую с производства.';
+      heroCity.textContent = 'Оптовые цены';
+      heroBtnText.textContent = 'Оптовый прайс';
+    }
+  };
+
+  const openModal = () => {
+    const currentCity = citySelect.value || DEFAULT_CITY;
+    updateFormByCity(currentCity);
+    modal.classList.add('is-active');
     document.body.classList.add('modal-open');
-  }
+  };
 
-  function closeModal() {
-    modal.classList.remove('active');
+  const closeModal = () => {
+    modal.classList.remove('is-active');
     document.body.classList.remove('modal-open');
-  }
+  };
 
-  // Открыть
-  requestBtn.addEventListener('click', openModal);
+  const saveCity = (city) => {
+    localStorage.setItem(STORAGE_KEY, city);
+  };
 
-  // Закрыть
+  const loadCity = () => {
+    return localStorage.getItem(STORAGE_KEY) || DEFAULT_CITY;
+  };
+
+  // Открытие модалки
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal();
+  });
+
+  // Закрытие
+  closeBtn.addEventListener('click', closeModal);
   modalOverlay.addEventListener('click', closeModal);
-  modalClose.addEventListener('click', closeModal);
 
   // ESC
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
+    if (e.key === 'Escape' && modal.classList.contains('is-active')) {
       closeModal();
     }
   });
+
+  // Смена города
+  citySelect.addEventListener('change', () => {
+    const selectedCity = citySelect.value;
+
+    cityText.textContent = selectedCity;
+    saveCity(selectedCity);
+    updateFormByCity(selectedCity);
+    updateHeroByCity(selectedCity);
+  });
+
+
+  const savedCity = loadCity();
+  citySelect.value = savedCity;
+  cityText.textContent = savedCity;
+  updateFormByCity(savedCity);
+  updateHeroByCity(savedCity);
 
 
   const form = document.getElementById('request');

@@ -193,11 +193,13 @@
         <section class="hero">
             <div class="hero__wrapper container">
                 <div class="hero-content__wrapper">
-                    <h1 class="hero-title">Окна и остекление под ключ в <span class="hero-city">Белгороде</span></h1>
+                    <h1 class="hero-heading">
+                        <span class="hero-title">Окна и остекление под ключ в </span>
+                        <span class="hero-city">Белгороде</span></h1>
                     <p class="hero-subtitle">Производство и монтаж окон ПВХ и алюминий: <br> 
                         от стандартных моделей до панорамных решений</p>
                     <button class="btn btn-arrow btn-hero">
-                        <p>Рассчитать с монтажом</p>
+                        <p class="hero-btn-text">Рассчитать с монтажом</p>
                         <div class="button-arrow hero-arrow">
                             <svg width="23" height="12" viewBox="0 0 23 12" fill="none">
                                 <path d="M22.5303 6.05328C22.8232 5.76039 22.8232 5.28551 22.5303 4.99262L17.7574 0.21965C17.4645 -0.0732435 16.9896 -0.0732436 16.6967 0.21965C16.4038 0.512543 16.4038 0.987417 16.6967 1.28031L20.9393 5.52295L16.6967 9.76559C16.4038 10.0585 16.4038 10.5334 16.6967 10.8263C16.9896 11.1191 17.4645 11.1191 17.7574 10.8263L22.5303 6.05328ZM0 5.52295L-6.55671e-08 6.27295L22 6.27295L22 5.52295L22 4.77295L6.55671e-08 4.77295L0 5.52295Z" fill="currentColor"/>
@@ -676,39 +678,36 @@
     </footer>
     <div class="modal" id="request-modal">
         <div class="modal-overlay"></div>
+        <div class="form modal-form">
+            <button class="modal-close" aria-label="Закрыть">×</button>
+            <h3 class="form-title">Рассчитать стоимость</h3>
+            <p class="form-subtitle">
+                Оставьте заявку и наш менеджер перезвонит, чтобы уточнить детали и подготовить точный расчёт под ваш проект
+            </p>
 
-            
+            <form id="request">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                </div>
 
-            <div class="modal-form">
-                <button class="modal-close" aria-label="Закрыть">×</button>
-                <h3 class="form-title">Рассчитать стоимость</h3>
-                <p class="form-subtitle">
-                    Оставьте заявку и наш менеджер перезвонит, чтобы уточнить детали и подготовить точный расчёт под ваш проект
-                </p>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Ваш номер телефона" required>
+                </div>
 
-                <form id="request">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Ваше имя" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="tel" name="phone" placeholder="Ваш номер телефона" required>
-                    </div>
-
-                    <!-- ===== Custom Select ===== -->
-                    <div class="form-group custom-select-wrapper">
+                <!-- ===== Custom Select ===== -->
+                <div class="form-group custom-select-wrapper">
                     <div class="custom-select" tabindex="0">
                         <div class="custom-select__trigger">
-                        <span class="custom-select__value">Клиент</span>
-                        <span class="custom-select__arrow"></span>
+                            <span class="custom-select__value">Клиент</span>
+                            <span class="custom-select__arrow"></span>
                         </div>
 
                         <div class="custom-select__dropdown">
-                        <div class="custom-option" data-value="private">Частное лицо</div>
-                        <div class="custom-option" data-value="crew">Монтажная бригада</div>
-                        <div class="custom-option" data-value="legal">
-                            Юридическое лицо / Застройщик ИЖС
-                        </div>
+                            <div class="custom-option" data-value="private">Частное лицо</div>
+                            <div class="custom-option" data-value="crew">Монтажная бригада</div>
+                            <div class="custom-option" data-value="legal">
+                                Юридическое лицо / Застройщик ИЖС
+                            </div>
                         </div>
                     </div>
 
@@ -719,19 +718,22 @@
                         <option value="crew">Монтажная бригада</option>
                         <option value="legal">Юридическое лицо / Застройщик ИЖС</option>
                     </select>
-                    </div>
-
-                    <button type="submit" class="btn form-btn">Отправить заявку</button>
-
-                    <p class="privacy-text">
-                    Нажимая на кнопку, я даю согласие на обработку персональных данных и условия политики конфиденциальности
-                    </p>
-                </form>
-
-                <div class="contact-section">
-                    <p class="contact-title">Или свяжитесь с нами сами</p>
-                    <a href="tel:+79290022221" class="phone-link">+7 (929) 002-22-21</a>
                 </div>
+
+                <div class="form-group promo-field" hidden>
+                    <input type="text" name="promo" placeholder="Промокод">
+                </div>
+
+                <button type="submit" class="btn form-btn">Отправить заявку</button>
+
+                <p class="privacy-text">
+                Нажимая на кнопку, я даю согласие на обработку персональных данных и условия политики конфиденциальности
+                </p>
+            </form>
+
+            <div class="contact-section">
+                <p class="contact-title">Или свяжитесь с нами сами</p>
+                <a href="tel:+79290022221" class="phone-link">+7 (929) 002-22-21</a>
             </div>
         </div>
     </div>

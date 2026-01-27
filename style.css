@@ -322,41 +322,65 @@ button {
 
 
 /* Модалка */
-/* MODAL BASE */
 .modal {
   position: fixed;
   inset: 0;
-  z-index: 2000;
+  z-index: 1000;
   display: none;
 }
 
-.modal.active {
+.modal.is-active {
   display: block;
 }
 
-/* OVERLAY */
+/* Затемнение */
 .modal-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
 }
 
+/* Центрирование формы */
 .modal-form {
-  
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  width: calc(100% - 32px);
+  max-height: calc(var(--vh, 1vh) * 100 - 10px);
+  overflow-y: auto;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+
+  overflow-y: auto;
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE / Edge (старые) */
+  -ms-overflow-style: none;
 }
 
-/* CLOSE */
+/* Chrome / Safari / Edge */
+.modal-form::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+
+/* Крестик */
 .modal-close {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 16px;
+  right: 16px;
+  background: transparent;
   border: none;
-  background: none;
-  font-size: 24px;
+  font-size: 28px;
+  line-height: 1;
   cursor: pointer;
 }
 
-/* BODY LOCK */
+/* Блокировка скролла */
 body.modal-open {
   overflow: hidden;
 }
@@ -1681,7 +1705,7 @@ input:-webkit-autofill:active {
     flex-direction: column;
     gap: 40px;
   }
-  .hero-title {
+  .hero-heading {
     max-width: 600px;
   }
   .hero-image img,
