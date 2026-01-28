@@ -1014,6 +1014,10 @@ body.modal-open {
   gap: 20px;
 }
 
+.footer-action {
+  cursor: pointer;;
+}
+
 /* Страница Каталог */
 .page-section {
   margin-top: 160px;
