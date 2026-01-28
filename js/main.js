@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
   setModalHeight();
 
   window.addEventListener('resize', setModalHeight);
-    const select = document.querySelector('.city-select');
-    const text = document.querySelector('.city-text');
+  const select = document.querySelector('.city-select');
+  const text = document.querySelector('.city-text');
 
-    select.addEventListener('change', () => {
-      text.textContent = select.value;
-    });
+  select.addEventListener('change', () => {
+    text.textContent = select.value;
+  });
 
   const burger = document.querySelector('.header__burger');
   const burgerMenu = document.querySelector('.burger-menu');
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Модалка
   const modal = document.getElementById('request-modal');
-  const openBtn = document.getElementById('request-btn');
+  const openButtons = document.querySelectorAll('.request-btn');
   const closeBtn = modal.querySelector('.modal-close');
   const modalOverlay = modal.querySelector('.modal-overlay');
 
@@ -238,9 +238,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Открытие модалки
-  openBtn.addEventListener('click', (e) => {
+  openButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
     e.preventDefault();
     openModal();
+    });
   });
 
   // Закрытие
@@ -361,4 +363,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   
-});
+})

@@ -343,7 +343,7 @@ button {
 /* Центрирование формы */
 .modal-form {
   position: relative;
-  z-index: 2;
+  z-index: 1200;
   max-width: 520px;
   width: calc(100% - 32px);
   max-height: calc(var(--vh, 1vh) * 100 - 10px);
