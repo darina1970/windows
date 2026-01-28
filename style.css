@@ -346,6 +346,7 @@ button {
   z-index: 1200;
   max-width: 520px;
   width: calc(100% - 32px);
+  height: fit-content;
   max-height: calc(var(--vh, 1vh) * 100 - 10px);
   overflow-y: auto;
   margin: auto;
@@ -1015,7 +1016,7 @@ body.modal-open {
 
 /* Страница Каталог */
 .page-section {
-  margin-top: 80px;
+  margin-top: 160px;
 }
 /* Табы */
 .catalog-tabs {
@@ -2153,6 +2154,9 @@ input:-webkit-autofill:active {
   }
   section {
     margin-bottom: 80px;
+  }
+  .page-section {
+    margin-top: 130px;
   }
   .hero-image img,
   .calculator-image img {
