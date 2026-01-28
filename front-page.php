@@ -154,9 +154,9 @@
                 </div>
                 <div class="catalogue-item item-6">
                     
-                    <div class="catalogue-btn__bg">
+                    <a href="<?php echo esc_url(home_url('/projects')); ?>" class="catalogue-btn__bg">
                         <p>Смотреть все</p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
