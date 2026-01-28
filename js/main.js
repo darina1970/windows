@@ -126,6 +126,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Бургер субменю
+  const catalogTrigger = document.querySelector('li[data-submenu="catalog"]');
+  const catalogLevel = document.querySelector('.burger-menu__level--catalog');
+  const mainLevel = document.querySelector('.burger-menu__level--main');
+  const backButtons = document.querySelectorAll('.burger-back');
+
+  catalogTrigger?.addEventListener('click', () => {
+    mainLevel.classList.remove('active');
+    catalogLevel.classList.add('active');
+  });
+
+  backButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catalogLevel.classList.remove('active');
+      mainLevel.classList.add('active');
+    });
+  });
+
   // Модалка
   const modal = document.getElementById('request-modal');
   const modalOverlay = modal.querySelector('.modal-overlay');
