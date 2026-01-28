@@ -435,8 +435,14 @@ body.modal-open {
   color: var(--color-white);
 }
 
-.btn p {
+.btn p,
+.btn span {
   line-height: 1;
+  margin: 0;
+}
+
+.button-arrow svg {
+  display: block;
 }
 
 .btn-arrow {
@@ -509,10 +515,11 @@ body.modal-open {
 
 .hero__wrapper {
   display: flex;
+  gap: 20px;
 }
 
 .hero-content__wrapper {
-  width: 50%;
+  width: calc(50% - 20px);
   align-self: center;
   padding-top: 10px;
 }
