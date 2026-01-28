@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!heroTitle || !heroCity || !heroBtnText) return;
 
     if (city === DEFAULT_CITY) {
-      heroTitle.textContent = 'Окна и остекление под ключ в ';
+      heroTitle.textContent = 'Окна и остекление под ключ в';
       heroCity.textContent = 'Белгороде';
       heroBtnText.textContent = 'Рассчитать с монтажом';
     } else {
