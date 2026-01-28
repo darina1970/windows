@@ -150,6 +150,7 @@ a {
 
 button {
   cursor: pointer;
+  color: var(--color-txt);
 }
 
 .color-blue {
@@ -1536,6 +1537,9 @@ input:-webkit-autofill:active {
   background: rgba(27,27,27,0.08);
 }
 
+/* Снек-бар */
+
+
 @media (max-width: 1280px) {
   .header__wrapper-left {
     gap: 30px;
@@ -1919,6 +1923,9 @@ input:-webkit-autofill:active {
   .blog__wrapper {
     display: flex;
     flex-direction: column;
+  }
+  .article-hero {
+    margin-top: 70px;
   }
 }
 
