@@ -37,8 +37,8 @@
             <nav class="header__nav">
                 <ul class="header__nav-list">
                     <li class="nav-list__item"><a href="<?php echo esc_url(home_url('/catalog')); ?>">Каталог</a></li>
-                    <li class="nav-list__item"><a href="<?php echo esc_url(home_url('/portfolio')); ?>">Проекты</a></li>
-                    <li class="nav-list__item"><a href="#reviews">Отзывы</a></li>
+                    <li class="nav-list__item"><a href="<?php echo esc_url(home_url('/projects')); ?>">Проекты</a></li>
+                    <li class="nav-list__item"><a href="<?php echo home_url(); ?>#reviews">Отзывы</a></li>
                     <li class="nav-list__item"><a href="<?php echo esc_url(home_url('/delivery')); ?>">Доставка</a></li>
                     <li class="nav-list__item"><a href="<?php echo esc_url(home_url('/contacts')); ?>">Контакты</a></li>
                     <li class="nav-list__item"><a href="<?php echo esc_url(home_url('/blog')); ?>">Блог</a></li>

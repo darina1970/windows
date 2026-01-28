@@ -7,6 +7,10 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('windows-main', get_template_directory_uri() . '/assets/css/style.css', [], filemtime(get_template_directory() .'/assets/css/style.css'));
     wp_enqueue_script('windows-main', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], null, true);
 
+    if (is_page_template('catalog.php')) {
+        wp_enqueue_script('questtime-home', get_template_directory_uri() . '/assets/js/catalog.js', [], null, true);
+    }
+
 });
 
 add_action('after_setup_theme', function () {
