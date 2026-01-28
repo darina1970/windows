@@ -416,7 +416,7 @@ body.modal-open {
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -435,6 +435,9 @@ body.modal-open {
   color: var(--color-white);
 }
 
+.btn p {
+  line-height: 1;
+}
 
 .btn-arrow {
     display: flex;
