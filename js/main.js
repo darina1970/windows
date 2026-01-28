@@ -10,9 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setModalHeight();
   window.addEventListener('resize', setModalHeight);
 
-  /*********************************
-   * CONSTANTS
-   *********************************/
+  // Выбор города, определение констант 
   const DEFAULT_CITY = 'Белгород';
   const STORAGE_KEY = 'selectedCity';
 
@@ -35,18 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   };
 
-  /*********************************
-   * CITY (HEADER)
-   *********************************/
+
   const citySelect = document.querySelector('.city-select');
   const cityText = document.querySelector('.city-text');
 
   const saveCity = (city) => localStorage.setItem(STORAGE_KEY, city);
   const loadCity = () => localStorage.getItem(STORAGE_KEY) || DEFAULT_CITY;
 
-  /*********************************
-   * HERO
-   *********************************/
+
+  // Секция HERO
   const heroTitle = document.querySelector('.hero-title');
   const heroCity = document.querySelector('.hero-city');
   const heroBtnText = document.querySelector('.hero-btn-text');
@@ -65,9 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  /*********************************
-   * BURGER MENU
-   *********************************/
+  // Footer
+  const measureBtns = document.querySelectorAll('.measure-btn');
+  const updateMeasureButtonByCity = (city) => {
+    measureBtns.forEach(btn => {
+      btn.hidden = (city !== DEFAULT_CITY);
+    })
+  };
+
+  // Бургер меню
   const burger = document.querySelector('.header__burger');
   const burgerMenu = document.querySelector('.burger-menu');
   const burgerOverlay = document.querySelector('.burger-overlay');
@@ -125,9 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /*********************************
-   * MODAL
-   *********************************/
+  // Модалка
   const modal = document.getElementById('request-modal');
   const modalOverlay = modal.querySelector('.modal-overlay');
   const modalClose = modal.querySelector('.modal-close');
@@ -182,9 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  /*********************************
-   * MODAL OPEN BUTTONS
-   *********************************/
+  // Кнопки, открывающие модалку
+  
   document.querySelectorAll('.request-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -218,15 +216,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /*********************************
-   * CITY CHANGE
-   *********************************/
+  // Смена города
   citySelect.addEventListener('change', () => {
     const city = citySelect.value;
     cityText.textContent = city;
     saveCity(city);
     updateHeroByCity(city);
     updateFormByCity(city);
+    updateMeasureButtonByCity(city);
   });
 
   const savedCity = loadCity();
@@ -234,6 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
   cityText.textContent = savedCity;
   updateHeroByCity(savedCity);
   updateFormByCity(savedCity);
+  updateMeasureButtonByCity(savedCity);
 
   // Слайдер
   const viewport = document.querySelector('.slider-viewport');
